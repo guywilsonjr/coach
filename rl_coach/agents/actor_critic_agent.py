@@ -94,11 +94,14 @@ class ActorCriticAgentParameters(AgentParameters):
 class ActorCriticAgent(PolicyOptimizationAgent):
     def __init__(self, agent_parameters, parent: Union['LevelManager', 'CompositeAgent']=None):
         super().__init__(agent_parameters, parent)
+        print("[RL] ActorCriticAgent init")
         self.last_gradient_update_step_idx = 0
         self.action_advantages = self.register_signal('Advantages')
         self.state_values = self.register_signal('Values')
         self.value_loss = self.register_signal('Value Loss')
         self.policy_loss = self.register_signal('Policy Loss')
+        print("[RL] ActorCriticAgent  init successful")
+
 
     # Discounting function used to calculate discounted returns.
     def discount(self, x, gamma):

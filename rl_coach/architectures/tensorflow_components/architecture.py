@@ -97,7 +97,7 @@ class TensorFlowArchitecture(Architecture):
         self.optimizer_type = self.network_parameters.optimizer_type
         if self.ap.task_parameters.seed is not None:
             tf.set_random_seed(self.ap.task_parameters.seed)
-        with tf.variable_scope("/".join(self.name.split("/")[1:]), initializer=tf.contrib.layers.xavier_initializer(),
+        with tf.variable_scope("/".join(self.name.split("/")[2:]), initializer=tf.contrib.layers.xavier_initializer(),
                                custom_getter=local_getter if network_is_local and global_network else None):
             self.global_step = tf.train.get_or_create_global_step()
 

@@ -25,6 +25,11 @@ from rl_coach.spaces import BoxActionSpace, DiscreteActionSpace
 from rl_coach.spaces import SpacesDefinition
 from rl_coach.utils import eps
 
+# Since we are using log prob it is possible to encounter a 0 log 0 condition
+# which will tank the training by producing NaN's therefore it is necessary
+# to add a zero offset to all networks with discreete distributions to prevent
+# this isssue
+ZERO_OFFSET = 1e-8
 
 class PPOHead(Head):
     def __init__(self, agent_parameters: AgentParameters, spaces: SpacesDefinition, network_name: str,
@@ -107,7 +112,8 @@ class PPOHead(Head):
         # Policy Head
         self.input = [self.actions, self.old_policy_mean]
         policy_values = self.dense_layer(num_actions)(input_layer, name='policy_fc')
-        self.policy_mean = tf.nn.softmax(policy_values, name="policy")
+        # Prevent distributions with 0 values
+        self.policy_mean = tf.maximum(tf.nn.softmax(policy_values, name="policy"), ZERO_OFFSET)
 
         # define the distributions for the policy and the old policy
         self.policy_distribution = tf.contrib.distributions.Categorical(probs=self.policy_mean)
@@ -123,9 +129,8 @@ class PPOHead(Head):
         self.old_policy_std = tf.placeholder(tf.float32, [None, num_actions], "old_policy_std")
 
         self.input = [self.actions, self.old_policy_mean, self.old_policy_std]
-        self.policy_mean = self.dense_layer(num_actions)(input_layer, name='policy_mean',
-                                           kernel_initializer=normalized_columns_initializer(0.01))
-
+        self.policy_mean = tf.identity(self.dense_layer(num_actions)(input_layer, name='policy_mean',
+                                           kernel_initializer=normalized_columns_initializer(0.01)), name="policy")
         # for local networks in distributed settings, we need to move variables we create manually to the
         # tf.GraphKeys.LOCAL_VARIABLES collection, since the variable scope custom getter which is set in
         # Architecture does not apply to them
@@ -135,7 +140,7 @@ class PPOHead(Head):
         else:
             self.policy_logstd = tf.Variable(np.zeros((1, num_actions)), dtype='float32', name="policy_log_std")
 
-        self.policy_std = tf.tile(tf.exp(self.policy_logstd), [tf.shape(input_layer)[0], 1], name='policy_std')
+        self.policy_std = tf.tile(tf.exp(tf.clip_by_value(self.policy_logstd, -20.0, 3.0)), [tf.shape(input_layer)[0], 1], name='policy_std')
 
         # define the distributions for the policy and the old policy
         self.policy_distribution = tf.contrib.distributions.MultivariateNormalDiag(self.policy_mean, self.policy_std + eps)

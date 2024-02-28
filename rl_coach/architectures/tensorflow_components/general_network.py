@@ -105,7 +105,7 @@ class GeneralTensorFlowNetwork(TensorFlowArchitecture):
         """
         self.global_network = global_network
         self.network_is_local = network_is_local
-        self.network_wrapper_name = name.split('/')[0]
+        self.network_wrapper_name = name.split('/')[1]
         self.network_parameters = agent_parameters.network_wrappers[self.network_wrapper_name]
         self.num_heads_per_network = 1 if self.network_parameters.use_separate_networks_per_head else \
             len(self.network_parameters.heads_parameters)
