@@ -34,7 +34,7 @@ schedule_params.heatup_steps = EnvironmentSteps(DATASET_SIZE)
 agent_params = DDQNBCQAgentParameters()
 agent_params.network_wrappers['main'].batch_size = 128
 # TODO cross-DL framework abstraction for a constant initializer?
-agent_params.network_wrappers['main'].heads_parameters = [QHeadParameters(output_bias_initializer=tf.constant_initializer(-100))]
+agent_params.network_wrappers['main'].heads_parameters = [QHeadParameters(output_bias_initializer=tf.compat.v1.constant_initializer(-100))]
 
 agent_params.algorithm.num_steps_between_copying_online_weights_to_target = TrainingSteps(
     100)
@@ -77,7 +77,7 @@ experience_generating_agent_params.network_wrappers['main'].learning_rate = 0.00
 experience_generating_agent_params.network_wrappers['main'].batch_size = 128
 experience_generating_agent_params.network_wrappers['main'].replace_mse_with_huber_loss = False
 experience_generating_agent_params.network_wrappers['main'].heads_parameters = \
-[QHeadParameters(output_bias_initializer=tf.constant_initializer(-100))]
+[QHeadParameters(output_bias_initializer=tf.compat.v1.constant_initializer(-100))]
 
 # ER size
 experience_generating_agent_params.memory = EpisodicExperienceReplayParameters()

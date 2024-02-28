@@ -12,7 +12,7 @@ logging.set_verbosity(logging.INFO)
 
 @pytest.fixture
 def reset():
-    tf.reset_default_graph()
+    tf.compat.v1.reset_default_graph()
 
 
 @pytest.mark.unit_test
@@ -26,24 +26,24 @@ def test_embedder(reset):
         embedder = ImageEmbedder(np.array([10, 100, 100, 100]), name="test")
 
 
-    is_training = tf.Variable(False, trainable=False, collections=[tf.GraphKeys.LOCAL_VARIABLES])
-    pre_ops = len(tf.get_default_graph().get_operations())
+    is_training = tf.Variable(False, trainable=False, collections=[tf.compat.v1.GraphKeys.LOCAL_VARIABLES])
+    pre_ops = len(tf.compat.v1.get_default_graph().get_operations())
     # creating a simple image embedder
     embedder = ImageEmbedder(np.array([100, 100, 10]), name="test", is_training=is_training)
 
     # make sure the only the is_training op is creates
-    assert len(tf.get_default_graph().get_operations()) == pre_ops
+    assert len(tf.compat.v1.get_default_graph().get_operations()) == pre_ops
 
     # call the embedder
     input_ph, output_ph = embedder()
 
     # make sure that now the ops were created
-    assert len(tf.get_default_graph().get_operations()) > pre_ops
+    assert len(tf.compat.v1.get_default_graph().get_operations()) > pre_ops
 
     # try feeding a batch of one example
     input = np.random.rand(1, 100, 100, 10)
-    sess = tf.Session()
-    sess.run(tf.global_variables_initializer())
+    sess = tf.compat.v1.Session()
+    sess.run(tf.compat.v1.global_variables_initializer())
     output = sess.run(embedder.output, {embedder.input: input})
     assert output.shape == (1, 5184)
 
@@ -58,7 +58,7 @@ def test_embedder(reset):
 @pytest.mark.unit_test
 def test_complex_embedder(reset):
     # creating a deep vector embedder
-    is_training = tf.Variable(False, trainable=False, collections=[tf.GraphKeys.LOCAL_VARIABLES])
+    is_training = tf.Variable(False, trainable=False, collections=[tf.compat.v1.GraphKeys.LOCAL_VARIABLES])
     embedder = ImageEmbedder(np.array([100, 100, 10]), name="test", scheme=EmbedderScheme.Deep, 
         is_training=is_training)
 
@@ -67,8 +67,8 @@ def test_complex_embedder(reset):
 
     # try feeding a batch of one example
     input = np.random.rand(1, 100, 100, 10)
-    sess = tf.Session()
-    sess.run(tf.global_variables_initializer())
+    sess = tf.compat.v1.Session()
+    sess.run(tf.compat.v1.global_variables_initializer())
     output = sess.run(embedder.output, {embedder.input: input})
     assert output.shape == (1, 256)  # should have flattened the input
 
@@ -76,7 +76,7 @@ def test_complex_embedder(reset):
 @pytest.mark.unit_test
 def test_activation_function(reset):
     # creating a deep image embedder with relu
-    is_training = tf.Variable(False, trainable=False, collections=[tf.GraphKeys.LOCAL_VARIABLES])
+    is_training = tf.Variable(False, trainable=False, collections=[tf.compat.v1.GraphKeys.LOCAL_VARIABLES])
     embedder = ImageEmbedder(np.array([100, 100, 10]), name="relu", scheme=EmbedderScheme.Deep,
                              activation_function=tf.nn.relu, is_training=is_training)
 
@@ -85,8 +85,8 @@ def test_activation_function(reset):
 
     # try feeding a batch of one example
     input = np.random.rand(1, 100, 100, 10)
-    sess = tf.Session()
-    sess.run(tf.global_variables_initializer())
+    sess = tf.compat.v1.Session()
+    sess.run(tf.compat.v1.global_variables_initializer())
     output = sess.run(embedder.output, {embedder.input: input})
     assert np.all(output >= 0)  # should have flattened the input
 
@@ -99,7 +99,7 @@ def test_activation_function(reset):
 
     # try feeding a batch of one example
     input = np.random.rand(1, 100, 100, 10)
-    sess = tf.Session()
-    sess.run(tf.global_variables_initializer())
+    sess = tf.compat.v1.Session()
+    sess.run(tf.compat.v1.global_variables_initializer())
     output = sess.run(embedder_tanh.output, {embedder_tanh.input: input})
     assert np.all(output >= -1) and np.all(output <= 1)

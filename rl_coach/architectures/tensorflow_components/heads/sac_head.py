@@ -39,7 +39,7 @@ class SACPolicyHead(Head):
         self.squash = squash        # squashing using tanh
 
     def _build_module(self, input_layer):
-        self.given_raw_actions = tf.placeholder(tf.float32, [None, self.num_actions], name="actions")
+        self.given_raw_actions = tf.compat.v1.placeholder(tf.float32, [None, self.num_actions], name="actions")
         self.input = [self.given_raw_actions]
         self.output = []
 
@@ -55,7 +55,7 @@ class SACPolicyHead(Head):
         '''
         if not self.squash:
             return 0
-        return tf.reduce_sum(tf.log(1 - tf.tanh(actions) ** 2 + eps), axis=1)
+        return tf.reduce_sum(tf.math.log(1 - tf.tanh(actions) ** 2 + eps), axis=1)
 
     def _build_continuous_net(self, input_layer, action_space):
         num_actions = action_space.shape[0]

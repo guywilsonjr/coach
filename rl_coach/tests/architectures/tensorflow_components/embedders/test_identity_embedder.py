@@ -15,7 +15,7 @@ logging.set_verbosity(logging.INFO)
 
 @pytest.fixture
 def reset():
-    tf.reset_default_graph()
+    tf.compat.v1.reset_default_graph()
 
 
 @pytest.mark.unit_test
@@ -23,17 +23,17 @@ def test_embedder(reset):
     embedder = VectorEmbedder(np.array([10, 10]), name="test", scheme=EmbedderScheme.Empty)
 
     # make sure the ops where not created yet
-    assert len(tf.get_default_graph().get_operations()) == 0
+    assert len(tf.compat.v1.get_default_graph().get_operations()) == 0
 
     # call the embedder
     input_ph, output_ph = embedder()
 
     # make sure that now the ops were created
-    assert len(tf.get_default_graph().get_operations()) > 0
+    assert len(tf.compat.v1.get_default_graph().get_operations()) > 0
 
     # try feeding a batch of one example  # TODO: consider auto converting to batch
     input = np.random.rand(1, 10, 10)
-    sess = tf.Session()
+    sess = tf.compat.v1.Session()
     output = sess.run(embedder.output, {embedder.input: input})
     assert output.shape == (1, 100)  # should have flattened the input
 

@@ -65,11 +65,11 @@ class DNDQHead(QHead):
         self.softmax = self.add_softmax_with_temperature()
 
     def _q_value(self, input_layer, action):
-        result = tf.py_func(self.DND.query,
+        result = tf.compat.v1.py_func(self.DND.query,
                             [input_layer, action, self.number_of_nn],
                             [tf.float64, tf.float64, tf.int64])
-        self.dnd_embeddings[action] = tf.to_float(result[0])
-        self.dnd_values[action] = tf.to_float(result[1])
+        self.dnd_embeddings[action] = tf.cast(result[0], dtype=tf.float32)
+        self.dnd_values[action] = tf.cast(result[1], dtype=tf.float32)
         self.dnd_indices[action] = result[2]
 
         # DND calculation
@@ -77,7 +77,7 @@ class DNDQHead(QHead):
         distances = tf.reduce_sum(square_diff, axis=2) + [self.l2_norm_added_delta]
         self.dnd_distances[action] = distances
         weights = 1.0 / distances
-        normalised_weights = weights / tf.reduce_sum(weights, axis=1, keep_dims=True)
+        normalised_weights = weights / tf.reduce_sum(weights, axis=1, keepdims=True)
         q_value = tf.reduce_sum(self.dnd_values[action] * normalised_weights, axis=1)
         q_value.set_shape((None,))
         return q_value

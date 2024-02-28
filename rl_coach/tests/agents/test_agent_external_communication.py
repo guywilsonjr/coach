@@ -12,7 +12,7 @@ logging.set_verbosity(logging.INFO)
 
 @pytest.mark.unit_test
 def test_get_QActionStateValue_predictions():
-    tf.reset_default_graph()
+    tf.compat.v1.reset_default_graph()
     from rl_coach.presets.CartPole_DQN import graph_manager as cartpole_dqn_graph_manager
     assert cartpole_dqn_graph_manager
     cartpole_dqn_graph_manager.create_graph(task_parameters=

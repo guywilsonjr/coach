@@ -1,0 +1,3322 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 365 files
+Detected 30 issues that require attention
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+File: rl_coach/logger.py
+--------------------------------------------------------------------------------
+rl_coach/logger.py:334:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: rl_coach/saver.py
+--------------------------------------------------------------------------------
+rl_coach/saver.py:108:25: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: rl_coach/utilities/carla_dataset_to_replay_buffer.py
+--------------------------------------------------------------------------------
+rl_coach/utilities/carla_dataset_to_replay_buffer.py:93:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: rl_coach/agents/human_agent.py
+--------------------------------------------------------------------------------
+rl_coach/agents/human_agent.py:107:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: rl_coach/architectures/mxnet_components/savers.py
+--------------------------------------------------------------------------------
+rl_coach/architectures/mxnet_components/savers.py:51:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+File: rl_coach/architectures/tensorflow_components/architecture.py
+--------------------------------------------------------------------------------
+rl_coach/architectures/tensorflow_components/architecture.py:132:66: ERROR: Using member tf.contrib.framework.get_name_scope in deprecated module tf.contrib. tf.contrib.framework.get_name_scope cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+rl_coach/architectures/tensorflow_components/architecture.py:174:28: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+rl_coach/architectures/tensorflow_components/architecture.py:180:31: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+--------------------------------------------------------------------------------
+File: rl_coach/architectures/tensorflow_components/savers.py
+--------------------------------------------------------------------------------
+rl_coach/architectures/tensorflow_components/savers.py:62:20: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+rl_coach/architectures/tensorflow_components/savers.py:121:17: ERROR: Using member tf.contrib.framework.load_checkpoint in deprecated module tf.contrib. tf.contrib.framework.load_checkpoint cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: rl_coach/architectures/tensorflow_components/shared_variables.py
+--------------------------------------------------------------------------------
+rl_coach/architectures/tensorflow_components/shared_variables.py:46:24: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+rl_coach/architectures/tensorflow_components/shared_variables.py:51:32: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+rl_coach/architectures/tensorflow_components/shared_variables.py:56:26: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+--------------------------------------------------------------------------------
+File: rl_coach/architectures/tensorflow_components/general_network.py
+--------------------------------------------------------------------------------
+rl_coach/architectures/tensorflow_components/general_network.py:313:28: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+rl_coach/architectures/tensorflow_components/general_network.py:400:33: ERROR: Using member tf.contrib.opt.ScipyOptimizerInterface in deprecated module tf.contrib. tf.contrib.opt.ScipyOptimizerInterface cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: rl_coach/architectures/tensorflow_components/layers.py
+--------------------------------------------------------------------------------
+rl_coach/architectures/tensorflow_components/layers.py:243:26: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+rl_coach/architectures/tensorflow_components/layers.py:245:24: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+rl_coach/architectures/tensorflow_components/layers.py:247:28: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+rl_coach/architectures/tensorflow_components/layers.py:249:26: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+--------------------------------------------------------------------------------
+File: rl_coach/architectures/tensorflow_components/embedders/embedder.py
+--------------------------------------------------------------------------------
+rl_coach/architectures/tensorflow_components/embedders/embedder.py:119:22: ERROR: Using member tf.contrib.layers.flatten in deprecated module tf.contrib. tf.contrib.layers.flatten cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: rl_coach/architectures/tensorflow_components/heads/sac_head.py
+--------------------------------------------------------------------------------
+rl_coach/architectures/tensorflow_components/heads/sac_head.py:73:14: ERROR: Using member tf.contrib.distributions in deprecated module tf.contrib. tf.contrib.distributions cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: rl_coach/architectures/tensorflow_components/heads/acer_policy_head.py
+--------------------------------------------------------------------------------
+rl_coach/architectures/tensorflow_components/heads/acer_policy_head.py:98:42: ERROR: Using member tf.contrib.distributions.Categorical in deprecated module tf.contrib. tf.contrib.distributions.Categorical cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+rl_coach/architectures/tensorflow_components/heads/acer_policy_head.py:124:35: ERROR: Using member tf.contrib.distributions.Categorical in deprecated module tf.contrib. tf.contrib.distributions.Categorical cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: rl_coach/architectures/tensorflow_components/heads/policy_head.py
+--------------------------------------------------------------------------------
+rl_coach/architectures/tensorflow_components/heads/policy_head.py:98:30: ERROR: Using member tf.contrib.distributions.Categorical in deprecated module tf.contrib. tf.contrib.distributions.Categorical cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+rl_coach/architectures/tensorflow_components/heads/policy_head.py:145:30: ERROR: Using member tf.contrib.distributions.MultivariateNormalDiag in deprecated module tf.contrib. tf.contrib.distributions.MultivariateNormalDiag cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: rl_coach/architectures/tensorflow_components/heads/ppo_head.py
+--------------------------------------------------------------------------------
+rl_coach/architectures/tensorflow_components/heads/ppo_head.py:119:35: ERROR: Using member tf.contrib.distributions.Categorical in deprecated module tf.contrib. tf.contrib.distributions.Categorical cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+rl_coach/architectures/tensorflow_components/heads/ppo_head.py:120:39: ERROR: Using member tf.contrib.distributions.Categorical in deprecated module tf.contrib. tf.contrib.distributions.Categorical cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+rl_coach/architectures/tensorflow_components/heads/ppo_head.py:146:35: ERROR: Using member tf.contrib.distributions.MultivariateNormalDiag in deprecated module tf.contrib. tf.contrib.distributions.MultivariateNormalDiag cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+rl_coach/architectures/tensorflow_components/heads/ppo_head.py:147:39: ERROR: Using member tf.contrib.distributions.MultivariateNormalDiag in deprecated module tf.contrib. tf.contrib.distributions.MultivariateNormalDiag cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+File: rl_coach/graph_managers/graph_manager.py
+--------------------------------------------------------------------------------
+rl_coach/graph_managers/graph_manager.py:626:36: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+================================================================================
+Detailed log follows:
+
+================================================================================
+================================================================================
+Input tree: 'rl_coach'
+================================================================================
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/dashboard.py'
+ outputting to 'rl_coach/dashboard.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/coach.py'
+ outputting to 'rl_coach/coach.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/rollout_worker.py'
+ outputting to 'rl_coach/rollout_worker.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/logger.py'
+ outputting to 'rl_coach/logger.py'
+--------------------------------------------------------------------------------
+
+334:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/level_manager.py'
+ outputting to 'rl_coach/level_manager.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/plot_atari.py'
+ outputting to 'rl_coach/plot_atari.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/core_types.py'
+ outputting to 'rl_coach/core_types.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/__init__.py'
+ outputting to 'rl_coach/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/saver.py'
+ outputting to 'rl_coach/saver.py'
+--------------------------------------------------------------------------------
+
+108:25: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/checkpoint.py'
+ outputting to 'rl_coach/checkpoint.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/schedules.py'
+ outputting to 'rl_coach/schedules.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/utils.py'
+ outputting to 'rl_coach/utils.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/renderer.py'
+ outputting to 'rl_coach/renderer.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/training_worker.py'
+ outputting to 'rl_coach/training_worker.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/spaces.py'
+ outputting to 'rl_coach/spaces.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/debug_utils.py'
+ outputting to 'rl_coach/debug_utils.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/run_multiple_seeds.py'
+ outputting to 'rl_coach/run_multiple_seeds.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/base_parameters.py'
+ outputting to 'rl_coach/base_parameters.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/__init__.py'
+ outputting to 'rl_coach/memories/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/memory.py'
+ outputting to 'rl_coach/memories/memory.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/backend/redis.py'
+ outputting to 'rl_coach/memories/backend/redis.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/backend/__init__.py'
+ outputting to 'rl_coach/memories/backend/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/backend/memory_impl.py'
+ outputting to 'rl_coach/memories/backend/memory_impl.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/backend/memory.py'
+ outputting to 'rl_coach/memories/backend/memory.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/non_episodic/prioritized_experience_replay.py'
+ outputting to 'rl_coach/memories/non_episodic/prioritized_experience_replay.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/non_episodic/balanced_experience_replay.py'
+ outputting to 'rl_coach/memories/non_episodic/balanced_experience_replay.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/non_episodic/__init__.py'
+ outputting to 'rl_coach/memories/non_episodic/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/non_episodic/differentiable_neural_dictionary.py'
+ outputting to 'rl_coach/memories/non_episodic/differentiable_neural_dictionary.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/non_episodic/transition_collection.py'
+ outputting to 'rl_coach/memories/non_episodic/transition_collection.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/non_episodic/experience_replay.py'
+ outputting to 'rl_coach/memories/non_episodic/experience_replay.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/episodic/episodic_hrl_hindsight_experience_replay.py'
+ outputting to 'rl_coach/memories/episodic/episodic_hrl_hindsight_experience_replay.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/episodic/__init__.py'
+ outputting to 'rl_coach/memories/episodic/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/episodic/single_episode_buffer.py'
+ outputting to 'rl_coach/memories/episodic/single_episode_buffer.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/episodic/episodic_experience_replay.py'
+ outputting to 'rl_coach/memories/episodic/episodic_experience_replay.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/memories/episodic/episodic_hindsight_experience_replay.py'
+ outputting to 'rl_coach/memories/episodic/episodic_hindsight_experience_replay.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/data_stores/data_store.py'
+ outputting to 'rl_coach/data_stores/data_store.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/data_stores/s3_data_store.py'
+ outputting to 'rl_coach/data_stores/s3_data_store.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/data_stores/data_store_impl.py'
+ outputting to 'rl_coach/data_stores/data_store_impl.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/data_stores/__init__.py'
+ outputting to 'rl_coach/data_stores/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/data_stores/nfs_data_store.py'
+ outputting to 'rl_coach/data_stores/nfs_data_store.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/utilities/carla_dataset_to_replay_buffer.py'
+ outputting to 'rl_coach/utilities/carla_dataset_to_replay_buffer.py'
+--------------------------------------------------------------------------------
+
+93:4: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/utilities/shared_running_stats.py'
+ outputting to 'rl_coach/utilities/shared_running_stats.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/utilities/__init__.py'
+ outputting to 'rl_coach/utilities/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/__init__.py'
+ outputting to 'rl_coach/filters/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/filter.py'
+ outputting to 'rl_coach/filters/filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_squeeze_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_squeeze_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_clipping_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_clipping_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_rescale_to_size_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_rescale_to_size_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_rgb_to_y_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_rgb_to_y_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/__init__.py'
+ outputting to 'rl_coach/filters/observation/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_reduction_by_sub_parts_name_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_reduction_by_sub_parts_name_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_to_uint8_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_to_uint8_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_normalization_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_normalization_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_crop_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_crop_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_move_axis_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_move_axis_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_rescale_size_by_factor_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_rescale_size_by_factor_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/observation/observation_stacking_filter.py'
+ outputting to 'rl_coach/filters/observation/observation_stacking_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/action/full_discrete_action_space_map.py'
+ outputting to 'rl_coach/filters/action/full_discrete_action_space_map.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/action/action_filter.py'
+ outputting to 'rl_coach/filters/action/action_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/action/partial_discrete_action_space_map.py'
+ outputting to 'rl_coach/filters/action/partial_discrete_action_space_map.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/action/attention_discretization.py'
+ outputting to 'rl_coach/filters/action/attention_discretization.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/action/linear_box_to_box_map.py'
+ outputting to 'rl_coach/filters/action/linear_box_to_box_map.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/action/box_masking.py'
+ outputting to 'rl_coach/filters/action/box_masking.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/action/__init__.py'
+ outputting to 'rl_coach/filters/action/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/action/box_discretization.py'
+ outputting to 'rl_coach/filters/action/box_discretization.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/reward/reward_normalization_filter.py'
+ outputting to 'rl_coach/filters/reward/reward_normalization_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/reward/reward_clipping_filter.py'
+ outputting to 'rl_coach/filters/reward/reward_clipping_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/reward/__init__.py'
+ outputting to 'rl_coach/filters/reward/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/reward/reward_rescale_filter.py'
+ outputting to 'rl_coach/filters/reward/reward_rescale_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/filters/reward/reward_filter.py'
+ outputting to 'rl_coach/filters/reward/reward_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/conftest.py'
+ outputting to 'rl_coach/tests/conftest.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/test_checkpoint.py'
+ outputting to 'rl_coach/tests/test_checkpoint.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/trace_tests.py'
+ outputting to 'rl_coach/tests/trace_tests.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/test_global_variable_saver.py'
+ outputting to 'rl_coach/tests/test_global_variable_saver.py'
+--------------------------------------------------------------------------------
+
+22:4: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+39:9: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+40:20: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+50:9: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+51:20: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+61:9: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+62:20: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+73:9: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+74:20: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/test_dist_coach.py'
+ outputting to 'rl_coach/tests/test_dist_coach.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/test_core_types.py'
+ outputting to 'rl_coach/tests/test_core_types.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/test_spaces.py'
+ outputting to 'rl_coach/tests/test_spaces.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/__init__.py'
+ outputting to 'rl_coach/tests/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/test_coach_args.py'
+ outputting to 'rl_coach/tests/test_coach_args.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/test_golden.py'
+ outputting to 'rl_coach/tests/test_golden.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/test_saver.py'
+ outputting to 'rl_coach/tests/test_saver.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/test_schedules.py'
+ outputting to 'rl_coach/tests/test_schedules.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/test_eks.py'
+ outputting to 'rl_coach/tests/test_eks.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/utils/test_utils.py'
+ outputting to 'rl_coach/tests/utils/test_utils.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/utils/args_utils.py'
+ outputting to 'rl_coach/tests/utils/args_utils.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/utils/definitions.py'
+ outputting to 'rl_coach/tests/utils/definitions.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/utils/__init__.py'
+ outputting to 'rl_coach/tests/utils/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/utils/presets_utils.py'
+ outputting to 'rl_coach/tests/utils/presets_utils.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/memories/test_single_episode_buffer.py'
+ outputting to 'rl_coach/tests/memories/test_single_episode_buffer.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/memories/test_hindsight_experience_replay.py'
+ outputting to 'rl_coach/tests/memories/test_hindsight_experience_replay.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/memories/test_differential_neural_dictionary.py'
+ outputting to 'rl_coach/tests/memories/test_differential_neural_dictionary.py'
+--------------------------------------------------------------------------------
+
+46:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+47:26: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+58:34: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+66:13: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+70:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/memories/__init__.py'
+ outputting to 'rl_coach/tests/memories/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/memories/test_prioritized_experience_replay.py'
+ outputting to 'rl_coach/tests/memories/test_prioritized_experience_replay.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/test_filters_stacking.py'
+ outputting to 'rl_coach/tests/filters/test_filters_stacking.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/__init__.py'
+ outputting to 'rl_coach/tests/filters/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/observation/test_observation_stacking_filter.py'
+ outputting to 'rl_coach/tests/filters/observation/test_observation_stacking_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/observation/test_observation_rescale_size_by_factor_filter.py'
+ outputting to 'rl_coach/tests/filters/observation/test_observation_rescale_size_by_factor_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/observation/test_observation_squeeze_filter.py'
+ outputting to 'rl_coach/tests/filters/observation/test_observation_squeeze_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/observation/__init__.py'
+ outputting to 'rl_coach/tests/filters/observation/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/observation/test_observation_rescale_to_size_filter.py'
+ outputting to 'rl_coach/tests/filters/observation/test_observation_rescale_to_size_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/observation/test_observation_crop_filter.py'
+ outputting to 'rl_coach/tests/filters/observation/test_observation_crop_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/observation/test_observation_to_uint8_filter.py'
+ outputting to 'rl_coach/tests/filters/observation/test_observation_to_uint8_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/observation/test_observation_reduction_by_sub_parts_name_filter.py'
+ outputting to 'rl_coach/tests/filters/observation/test_observation_reduction_by_sub_parts_name_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/observation/test_observation_rgb_to_y_filter.py'
+ outputting to 'rl_coach/tests/filters/observation/test_observation_rgb_to_y_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/action/test_box_discretization.py'
+ outputting to 'rl_coach/tests/filters/action/test_box_discretization.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/action/test_box_masking.py'
+ outputting to 'rl_coach/tests/filters/action/test_box_masking.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/action/test_attention_discretization.py'
+ outputting to 'rl_coach/tests/filters/action/test_attention_discretization.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/action/__init__.py'
+ outputting to 'rl_coach/tests/filters/action/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/action/test_linear_box_to_box_map.py'
+ outputting to 'rl_coach/tests/filters/action/test_linear_box_to_box_map.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/reward/test_reward_rescale_filter.py'
+ outputting to 'rl_coach/tests/filters/reward/test_reward_rescale_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/reward/__init__.py'
+ outputting to 'rl_coach/tests/filters/reward/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/filters/reward/test_reward_clipping_filter.py'
+ outputting to 'rl_coach/tests/filters/reward/test_reward_clipping_filter.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/exploration_policies/test_ou_process.py'
+ outputting to 'rl_coach/tests/exploration_policies/test_ou_process.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/exploration_policies/test_e_greedy.py'
+ outputting to 'rl_coach/tests/exploration_policies/test_e_greedy.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/exploration_policies/__init__.py'
+ outputting to 'rl_coach/tests/exploration_policies/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/exploration_policies/test_greedy.py'
+ outputting to 'rl_coach/tests/exploration_policies/test_greedy.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/exploration_policies/test_additive_noise.py'
+ outputting to 'rl_coach/tests/exploration_policies/test_additive_noise.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/agents/test_agent_external_communication.py'
+ outputting to 'rl_coach/tests/agents/test_agent_external_communication.py'
+--------------------------------------------------------------------------------
+
+15:4: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/agents/__init__.py'
+ outputting to 'rl_coach/tests/agents/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/__init__.py'
+ outputting to 'rl_coach/tests/architectures/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/test_utils.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/test_utils.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/__init__.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/embedders/test_image_embedder.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/embedders/test_image_embedder.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/embedders/__init__.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/embedders/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/embedders/test_vector_embedder.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/embedders/test_vector_embedder.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/heads/test_v_head.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/heads/test_v_head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/heads/test_head.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/heads/test_head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/heads/__init__.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/heads/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/heads/test_ppo_head.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/heads/test_ppo_head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/heads/test_ppo_v_head.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/heads/test_ppo_v_head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/heads/test_q_head.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/heads/test_q_head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/middlewares/test_lstm_middleware.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/middlewares/test_lstm_middleware.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/middlewares/__init__.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/middlewares/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/mxnet_components/middlewares/test_fc_middleware.py'
+ outputting to 'rl_coach/tests/architectures/mxnet_components/middlewares/test_fc_middleware.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/tensorflow_components/__init__.py'
+ outputting to 'rl_coach/tests/architectures/tensorflow_components/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/tensorflow_components/embedders/test_image_embedder.py'
+ outputting to 'rl_coach/tests/architectures/tensorflow_components/embedders/test_image_embedder.py'
+--------------------------------------------------------------------------------
+
+15:4: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+29:67: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+30:18: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+35:15: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+41:15: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+45:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+46:13: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+61:67: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+70:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+71:13: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+79:67: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+88:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+89:13: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+102:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+103:13: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/tensorflow_components/embedders/__init__.py'
+ outputting to 'rl_coach/tests/architectures/tensorflow_components/embedders/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/tensorflow_components/embedders/test_vector_embedder.py'
+ outputting to 'rl_coach/tests/architectures/tensorflow_components/embedders/test_vector_embedder.py'
+--------------------------------------------------------------------------------
+
+15:4: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+25:67: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+26:18: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+31:15: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+37:15: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+41:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+42:13: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+57:67: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+65:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+66:13: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+74:67: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+83:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+84:13: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+97:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+98:13: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/architectures/tensorflow_components/embedders/test_identity_embedder.py'
+ outputting to 'rl_coach/tests/architectures/tensorflow_components/embedders/test_identity_embedder.py'
+--------------------------------------------------------------------------------
+
+18:4: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+26:15: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+32:15: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+36:11: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/presets/__init__.py'
+ outputting to 'rl_coach/tests/presets/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/presets/test_presets.py'
+ outputting to 'rl_coach/tests/presets/test_presets.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/graph_managers/__init__.py'
+ outputting to 'rl_coach/tests/graph_managers/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/graph_managers/test_basic_rl_graph_manager.py'
+ outputting to 'rl_coach/tests/graph_managers/test_basic_rl_graph_manager.py'
+--------------------------------------------------------------------------------
+
+17:4: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+28:4: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+39:4: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+49:4: INFO: Renamed 'tf.reset_default_graph' to 'tf.compat.v1.reset_default_graph'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/graph_managers/test_graph_manager.py'
+ outputting to 'rl_coach/tests/graph_managers/test_graph_manager.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/environments/__init__.py'
+ outputting to 'rl_coach/tests/environments/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/tests/environments/test_gym_environment.py'
+ outputting to 'rl_coach/tests/environments/test_gym_environment.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/continuous_entropy.py'
+ outputting to 'rl_coach/exploration_policies/continuous_entropy.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/ou_process.py'
+ outputting to 'rl_coach/exploration_policies/ou_process.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/categorical.py'
+ outputting to 'rl_coach/exploration_policies/categorical.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/parameter_noise.py'
+ outputting to 'rl_coach/exploration_policies/parameter_noise.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/exploration_policy.py'
+ outputting to 'rl_coach/exploration_policies/exploration_policy.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/e_greedy.py'
+ outputting to 'rl_coach/exploration_policies/e_greedy.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/__init__.py'
+ outputting to 'rl_coach/exploration_policies/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/ucb.py'
+ outputting to 'rl_coach/exploration_policies/ucb.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/greedy.py'
+ outputting to 'rl_coach/exploration_policies/greedy.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/truncated_normal.py'
+ outputting to 'rl_coach/exploration_policies/truncated_normal.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/additive_noise.py'
+ outputting to 'rl_coach/exploration_policies/additive_noise.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/bootstrapped.py'
+ outputting to 'rl_coach/exploration_policies/bootstrapped.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/exploration_policies/boltzmann.py'
+ outputting to 'rl_coach/exploration_policies/boltzmann.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/ddpg_agent.py'
+ outputting to 'rl_coach/agents/ddpg_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/soft_actor_critic_agent.py'
+ outputting to 'rl_coach/agents/soft_actor_critic_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/hac_ddpg_agent.py'
+ outputting to 'rl_coach/agents/hac_ddpg_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/mmc_agent.py'
+ outputting to 'rl_coach/agents/mmc_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/bootstrapped_dqn_agent.py'
+ outputting to 'rl_coach/agents/bootstrapped_dqn_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/agent.py'
+ outputting to 'rl_coach/agents/agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/ppo_agent.py'
+ outputting to 'rl_coach/agents/ppo_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/dfp_agent.py'
+ outputting to 'rl_coach/agents/dfp_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/rainbow_dqn_agent.py'
+ outputting to 'rl_coach/agents/rainbow_dqn_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/pal_agent.py'
+ outputting to 'rl_coach/agents/pal_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/clipped_ppo_agent.py'
+ outputting to 'rl_coach/agents/clipped_ppo_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/imitation_agent.py'
+ outputting to 'rl_coach/agents/imitation_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/ddqn_agent.py'
+ outputting to 'rl_coach/agents/ddqn_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/__init__.py'
+ outputting to 'rl_coach/agents/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/value_optimization_agent.py'
+ outputting to 'rl_coach/agents/value_optimization_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/n_step_q_agent.py'
+ outputting to 'rl_coach/agents/n_step_q_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/nec_agent.py'
+ outputting to 'rl_coach/agents/nec_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/human_agent.py'
+ outputting to 'rl_coach/agents/human_agent.py'
+--------------------------------------------------------------------------------
+
+107:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/policy_gradients_agent.py'
+ outputting to 'rl_coach/agents/policy_gradients_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/actor_critic_agent.py'
+ outputting to 'rl_coach/agents/actor_critic_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/policy_optimization_agent.py'
+ outputting to 'rl_coach/agents/policy_optimization_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/categorical_dqn_agent.py'
+ outputting to 'rl_coach/agents/categorical_dqn_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/cil_agent.py'
+ outputting to 'rl_coach/agents/cil_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/dqn_agent.py'
+ outputting to 'rl_coach/agents/dqn_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/qr_dqn_agent.py'
+ outputting to 'rl_coach/agents/qr_dqn_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/td3_agent.py'
+ outputting to 'rl_coach/agents/td3_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/acer_agent.py'
+ outputting to 'rl_coach/agents/acer_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/bc_agent.py'
+ outputting to 'rl_coach/agents/bc_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/naf_agent.py'
+ outputting to 'rl_coach/agents/naf_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/agent_interface.py'
+ outputting to 'rl_coach/agents/agent_interface.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/ddqn_bcq_agent.py'
+ outputting to 'rl_coach/agents/ddqn_bcq_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/agents/composite_agent.py'
+ outputting to 'rl_coach/agents/composite_agent.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/orchestrators/kubernetes_orchestrator.py'
+ outputting to 'rl_coach/orchestrators/kubernetes_orchestrator.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/orchestrators/deploy.py'
+ outputting to 'rl_coach/orchestrators/deploy.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/orchestrators/__init__.py'
+ outputting to 'rl_coach/orchestrators/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/dashboard_components/landing_page.py'
+ outputting to 'rl_coach/dashboard_components/landing_page.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/dashboard_components/signals.py'
+ outputting to 'rl_coach/dashboard_components/signals.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/dashboard_components/signals_files_group.py'
+ outputting to 'rl_coach/dashboard_components/signals_files_group.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/dashboard_components/episodic_board.py'
+ outputting to 'rl_coach/dashboard_components/episodic_board.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/dashboard_components/experiment_board.py'
+ outputting to 'rl_coach/dashboard_components/experiment_board.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/dashboard_components/boards.py'
+ outputting to 'rl_coach/dashboard_components/boards.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/dashboard_components/signals_file.py'
+ outputting to 'rl_coach/dashboard_components/signals_file.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/dashboard_components/signals_file_base.py'
+ outputting to 'rl_coach/dashboard_components/signals_file_base.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/dashboard_components/globals.py'
+ outputting to 'rl_coach/dashboard_components/globals.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/dashboard_components/__init__.py'
+ outputting to 'rl_coach/dashboard_components/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/architecture.py'
+ outputting to 'rl_coach/architectures/architecture.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/embedder_parameters.py'
+ outputting to 'rl_coach/architectures/embedder_parameters.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/__init__.py'
+ outputting to 'rl_coach/architectures/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/head_parameters.py'
+ outputting to 'rl_coach/architectures/head_parameters.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/middleware_parameters.py'
+ outputting to 'rl_coach/architectures/middleware_parameters.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/layers.py'
+ outputting to 'rl_coach/architectures/layers.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/network_wrapper.py'
+ outputting to 'rl_coach/architectures/network_wrapper.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/architecture.py'
+ outputting to 'rl_coach/architectures/mxnet_components/architecture.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/savers.py'
+ outputting to 'rl_coach/architectures/mxnet_components/savers.py'
+--------------------------------------------------------------------------------
+
+51:8: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/__init__.py'
+ outputting to 'rl_coach/architectures/mxnet_components/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/utils.py'
+ outputting to 'rl_coach/architectures/mxnet_components/utils.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/general_network.py'
+ outputting to 'rl_coach/architectures/mxnet_components/general_network.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/layers.py'
+ outputting to 'rl_coach/architectures/mxnet_components/layers.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/embedders/embedder.py'
+ outputting to 'rl_coach/architectures/mxnet_components/embedders/embedder.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/embedders/image_embedder.py'
+ outputting to 'rl_coach/architectures/mxnet_components/embedders/image_embedder.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/embedders/__init__.py'
+ outputting to 'rl_coach/architectures/mxnet_components/embedders/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/embedders/vector_embedder.py'
+ outputting to 'rl_coach/architectures/mxnet_components/embedders/vector_embedder.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/embedders/tensor_embedder.py'
+ outputting to 'rl_coach/architectures/mxnet_components/embedders/tensor_embedder.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/heads/head.py'
+ outputting to 'rl_coach/architectures/mxnet_components/heads/head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/heads/v_head.py'
+ outputting to 'rl_coach/architectures/mxnet_components/heads/v_head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/heads/__init__.py'
+ outputting to 'rl_coach/architectures/mxnet_components/heads/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/heads/q_head.py'
+ outputting to 'rl_coach/architectures/mxnet_components/heads/q_head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/heads/ppo_v_head.py'
+ outputting to 'rl_coach/architectures/mxnet_components/heads/ppo_v_head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/heads/ppo_head.py'
+ outputting to 'rl_coach/architectures/mxnet_components/heads/ppo_head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/middlewares/middleware.py'
+ outputting to 'rl_coach/architectures/mxnet_components/middlewares/middleware.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/middlewares/__init__.py'
+ outputting to 'rl_coach/architectures/mxnet_components/middlewares/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/middlewares/lstm_middleware.py'
+ outputting to 'rl_coach/architectures/mxnet_components/middlewares/lstm_middleware.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/mxnet_components/middlewares/fc_middleware.py'
+ outputting to 'rl_coach/architectures/mxnet_components/middlewares/fc_middleware.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/architecture.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/architecture.py'
+--------------------------------------------------------------------------------
+
+34:9: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+34:9: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+37:13: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+37:13: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+39:12: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+39:12: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+40:17: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+40:17: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+42:12: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+42:12: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+43:12: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+43:12: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+44:12: INFO: tf.summary.scalar requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+44:12: INFO: Renamed 'tf.summary.scalar' to 'tf.compat.v1.summary.scalar'
+45:12: INFO: tf.summary.histogram requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+45:12: INFO: Renamed 'tf.summary.histogram' to 'tf.compat.v1.summary.histogram'
+55:29: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+99:12: INFO: Renamed 'tf.set_random_seed' to 'tf.compat.v1.set_random_seed'
+100:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+100:79: INFO: Changing tf.contrib.layers xavier initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+102:31: INFO: Renamed 'tf.train.get_or_create_global_step' to 'tf.compat.v1.train.get_or_create_global_step'
+109:30: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+131:42: INFO: Renamed 'tf.get_collection' to 'tf.compat.v1.get_collection'
+131:60: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+132:66: ERROR: Using member tf.contrib.framework.get_name_scope in deprecated module tf.contrib. tf.contrib.framework.get_name_scope cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+133:30: INFO: tf.summary.merge requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+133:30: INFO: Renamed 'tf.summary.merge' to 'tf.compat.v1.summary.merge'
+137:16: INFO: Renamed 'tf.global_variables_initializer' to 'tf.compat.v1.global_variables_initializer'
+138:16: INFO: Renamed 'tf.local_variables_initializer' to 'tf.compat.v1.local_variables_initializer'
+174:28: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+174:28: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+175:56: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+175:56: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+180:31: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+180:31: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+181:59: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+181:59: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+194:30: INFO: Renamed 'tf.global_norm' to 'tf.linalg.global_norm'
+208:37: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+273:25: INFO: Renamed 'tf.get_collection' to 'tf.compat.v1.get_collection'
+273:43: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+291:36: INFO: tf.summary.FileWriter requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+291:36: INFO: Renamed 'tf.summary.FileWriter' to 'tf.compat.v1.summary.FileWriter'
+294:36: INFO: tf.summary.FileWriter requires manual check. The TF 1.x summary API cannot be automatically migrated to TF 2.0, so symbols have been converted to tf.compat.v1.summary.* and must be migrated manually. Typical usage will only require changes to the summary writing logic, not to individual calls like scalar(). For examples of the new summary API, see the Effective TF 2.0 migration document or check the TF 2.0 TensorBoard tutorials.
+294:36: INFO: Renamed 'tf.summary.FileWriter' to 'tf.compat.v1.summary.FileWriter'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/savers.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/savers.py'
+--------------------------------------------------------------------------------
+
+31:26: INFO: Renamed 'tf.trainable_variables' to 'tf.compat.v1.trainable_variables'
+42:35: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+46:22: INFO: Renamed 'tf.train.Saver' to 'tf.compat.v1.train.Saver'
+62:20: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+121:17: ERROR: Using member tf.contrib.framework.load_checkpoint in deprecated module tf.contrib. tf.contrib.framework.load_checkpoint cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/shared_variables.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/shared_variables.py'
+--------------------------------------------------------------------------------
+
+45:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+46:24: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+46:24: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+48:28: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+48:28: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+50:29: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+51:32: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+51:32: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+53:28: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+53:28: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+55:29: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+56:26: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+56:26: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+59:28: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+59:28: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+60:60: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+63:25: INFO: Renamed 'tf.div' to 'tf.compat.v1.div'
+69:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+70:35: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+71:28: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+73:28: INFO: Renamed 'tf.assign_add' to 'tf.compat.v1.assign_add'
+74:36: INFO: Renamed 'tf.assign_add' to 'tf.compat.v1.assign_add'
+75:30: INFO: Renamed 'tf.assign_add' to 'tf.compat.v1.assign_add'
+77:27: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/__init__.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/utils.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/utils.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/general_network.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/general_network.py'
+--------------------------------------------------------------------------------
+
+67:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+68:21: INFO: `name` passed to `name_scope`. Because you may be re-entering an existing scope, it is not safe to convert automatically,  the v2 name_scope does not support re-entering scopes by name.
+
+68:21: INFO: Renamed 'tf.name_scope' to 'tf.compat.v1.name_scope'
+71:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+240:76: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+241:39: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+242:34: INFO: Renamed 'tf.assign' to 'tf.compat.v1.assign'
+245:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+313:28: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+313:28: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+318:28: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+346:43: INFO: Renamed 'tf.get_collection' to 'tf.compat.v1.get_collection'
+346:61: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+349:43: INFO: Renamed 'tf.get_collection' to 'tf.compat.v1.get_collection'
+349:61: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+352:22: INFO: tf.losses.get_losses requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+352:22: INFO: Renamed 'tf.losses.get_losses' to 'tf.compat.v1.losses.get_losses'
+366:16: INFO: tf.train.exponential_decay requires manual check. To use learning rate decay schedules with TensorFlow 2.0, switch to the schedules in `tf.keras.optimizers.schedules`.
+
+366:16: INFO: Renamed 'tf.train.exponential_decay' to 'tf.compat.v1.train.exponential_decay'
+391:33: INFO: Renamed 'tf.train.AdamOptimizer' to 'tf.compat.v1.train.AdamOptimizer'
+396:33: INFO: Renamed 'tf.train.RMSPropOptimizer' to 'tf.compat.v1.train.RMSPropOptimizer'
+400:33: ERROR: Using member tf.contrib.opt.ScipyOptimizerInterface in deprecated module tf.contrib. tf.contrib.opt.ScipyOptimizerInterface cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/layers.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/layers.py'
+--------------------------------------------------------------------------------
+
+35:12: INFO: Renamed 'tf.layers.batch_normalization' to 'tf.compat.v1.layers.batch_normalization'
+49:12: INFO: Renamed 'tf.layers.dropout' to 'tf.compat.v1.layers.dropout'
+119:15: INFO: Renamed 'tf.layers.conv2d' to 'tf.compat.v1.layers.conv2d'
+180:31: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+180:31: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+181:15: INFO: Renamed 'tf.layers.dense' to 'tf.compat.v1.layers.dense'
+225:24: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+226:24: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+236:38: INFO: tf.random_uniform_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+236:38: INFO: Renamed 'tf.random_uniform_initializer' to 'tf.compat.v1.random_uniform_initializer'
+237:40: INFO: tf.random_uniform_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+237:40: INFO: Renamed 'tf.random_uniform_initializer' to 'tf.compat.v1.random_uniform_initializer'
+241:31: INFO: tf.zeros_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+241:31: INFO: Renamed 'tf.zeros_initializer' to 'tf.compat.v1.zeros_initializer'
+242:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+243:26: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+243:26: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+245:24: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+245:24: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+247:28: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+247:28: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+249:26: WARNING: tf.get_variable requires manual check. tf.get_variable returns ResourceVariables by default in 2.0, which have well-defined semantics and are stricter about shapes. You can disable this behavior by passing use_resource=False, or by calling tf.compat.v1.disable_resource_variables().
+249:26: INFO: Renamed 'tf.get_variable' to 'tf.compat.v1.get_variable'
+251:28: INFO: Renamed 'tf.random_normal' to 'tf.random.normal'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/distributed_tf_utils.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/distributed_tf_utils.py'
+--------------------------------------------------------------------------------
+
+39:83: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+47:13: INFO: Renamed 'tf.train.Server' to 'tf.distribute.Server'
+54:64: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+64:13: INFO: Renamed 'tf.train.Server' to 'tf.distribute.Server'
+72:13: INFO: Renamed 'tf.train.replica_device_setter' to 'tf.compat.v1.train.replica_device_setter'
+77:37: INFO: Renamed 'tf.train.Server' to 'tf.distribute.Server'
+78:85: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+92:11: INFO: Renamed 'tf.train.MonitoredTrainingSession' to 'tf.compat.v1.train.MonitoredTrainingSession'
+78:109: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/embedders/embedder.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/embedders/embedder.py'
+--------------------------------------------------------------------------------
+
+78:47: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+84:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+86:29: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+119:22: ERROR: Using member tf.contrib.layers.flatten in deprecated module tf.contrib. tf.contrib.layers.flatten cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/embedders/image_embedder.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/embedders/image_embedder.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/embedders/__init__.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/embedders/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/embedders/vector_embedder.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/embedders/vector_embedder.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/embedders/tensor_embedder.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/embedders/tensor_embedder.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/quantile_regression_q_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/quantile_regression_q_head.py'
+--------------------------------------------------------------------------------
+
+41:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+42:34: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+51:25: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+76:8: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+76:8: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/head.py'
+--------------------------------------------------------------------------------
+
+53:69: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+76:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+76:60: INFO: Changing tf.contrib.layers xavier initializer to a tf.compat.v1.keras.initializers.VarianceScaling and converting arguments.
+
+129:32: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+137:21: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+142:32: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+156:12: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+156:12: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+162:12: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+162:12: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/cil_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/cil_head.py'
+--------------------------------------------------------------------------------
+
+42:29: INFO: tf.losses.huber_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+42:29: INFO: Renamed 'tf.losses.huber_loss' to 'tf.compat.v1.losses.huber_loss'
+44:29: INFO: tf.losses.mean_squared_error requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+44:29: INFO: Renamed 'tf.losses.mean_squared_error' to 'tf.compat.v1.losses.mean_squared_error'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/dnd_q_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/dnd_q_head.py'
+--------------------------------------------------------------------------------
+
+68:17: INFO: Renamed 'tf.py_func' to 'tf.compat.v1.py_func'
+71:38: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+72:34: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+80:70: INFO: Renamed keyword argument for tf.reduce_sum from keep_dims to keepdims
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/td3_v_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/td3_v_head.py'
+--------------------------------------------------------------------------------
+
+43:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+60:8: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+60:8: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/v_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/v_head.py'
+--------------------------------------------------------------------------------
+
+36:29: INFO: tf.losses.huber_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+36:29: INFO: Renamed 'tf.losses.huber_loss' to 'tf.compat.v1.losses.huber_loss'
+38:29: INFO: tf.losses.mean_squared_error requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+38:29: INFO: Renamed 'tf.losses.mean_squared_error' to 'tf.compat.v1.losses.mean_squared_error'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/ddpg_v_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/ddpg_v_head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/naf_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/naf_head.py'
+--------------------------------------------------------------------------------
+
+41:29: INFO: tf.losses.huber_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+41:29: INFO: Renamed 'tf.losses.huber_loss' to 'tf.compat.v1.losses.huber_loss'
+43:29: INFO: tf.losses.mean_squared_error requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+43:29: INFO: Renamed 'tf.losses.mean_squared_error' to 'tf.compat.v1.losses.mean_squared_error'
+47:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/__init__.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/measurements_prediction_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/measurements_prediction_head.py'
+--------------------------------------------------------------------------------
+
+42:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+48:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+54:74: INFO: Renamed keyword argument for tf.reduce_mean from reduction_indices to axis
+58:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+60:24: INFO: Renamed 'tf.where' to 'tf.compat.v1.where'
+60:33: INFO: Renamed 'tf.is_nan' to 'tf.math.is_nan'
+61:89: INFO: Renamed keyword argument for tf.reduce_mean from reduction_indices to axis
+62:8: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+62:8: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/sac_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/sac_head.py'
+--------------------------------------------------------------------------------
+
+42:33: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+58:29: INFO: Renamed 'tf.log' to 'tf.math.log'
+73:14: ERROR: Using member tf.contrib.distributions in deprecated module tf.contrib. tf.contrib.distributions cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/acer_policy_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/acer_policy_head.py'
+--------------------------------------------------------------------------------
+
+43:66: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+44:36: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+45:28: INFO: Renamed 'tf.assign' to 'tf.compat.v1.assign'
+61:41: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+64:43: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+68:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+70:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+72:24: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+81:35: INFO: Renamed 'tf.log' to 'tf.math.log'
+91:12: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+91:12: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+94:25: INFO: Changed tf.to_float call to tf.cast(..., dtype=tf.float32).
+95:29: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+98:42: ERROR: Using member tf.contrib.distributions.Categorical in deprecated module tf.contrib. tf.contrib.distributions.Categorical cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+99:48: INFO: Renamed 'tf.distributions.kl_divergence' to 'tf.compat.v1.distributions.kl_divergence'
+117:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+124:35: ERROR: Using member tf.contrib.distributions.Categorical in deprecated module tf.contrib. tf.contrib.distributions.Categorical cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/ddpg_actor_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/ddpg_actor_head.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/sac_q_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/sac_q_head.py'
+--------------------------------------------------------------------------------
+
+51:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+52:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+59:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+71:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+96:8: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+96:8: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/q_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/q_head.py'
+--------------------------------------------------------------------------------
+
+45:29: INFO: tf.losses.huber_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+45:29: INFO: Renamed 'tf.losses.huber_loss' to 'tf.compat.v1.losses.huber_loss'
+47:29: INFO: tf.losses.mean_squared_error requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+47:29: INFO: Renamed 'tf.losses.mean_squared_error' to 'tf.compat.v1.losses.mean_squared_error'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/policy_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/policy_head.py'
+--------------------------------------------------------------------------------
+
+47:66: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+48:36: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+49:28: INFO: Renamed 'tf.assign' to 'tf.compat.v1.assign'
+67:17: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+84:30: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+87:12: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+87:12: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+91:28: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+98:30: ERROR: Using member tf.contrib.distributions.Categorical in deprecated module tf.contrib. tf.contrib.distributions.Categorical cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+104:28: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+138:76: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+141:42: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+142:37: INFO: Renamed 'tf.assign' to 'tf.compat.v1.assign'
+145:30: ERROR: Using member tf.contrib.distributions.MultivariateNormalDiag in deprecated module tf.contrib. tf.contrib.distributions.MultivariateNormalDiag cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/categorical_q_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/categorical_q_head.py'
+--------------------------------------------------------------------------------
+
+48:29: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+51:20: INFO: Changing labels arg of tf.nn.softmax_cross_entropy_with_logits to tf.stop_gradient(labels). Please check this transformation.
+
+52:8: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+52:8: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/ppo_v_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/ppo_v_head.py'
+--------------------------------------------------------------------------------
+
+38:32: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+43:42: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+52:8: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+52:8: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/classification_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/classification_head.py'
+--------------------------------------------------------------------------------
+
+50:22: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+51:20: INFO: Changing labels arg of tf.nn.softmax_cross_entropy_with_logits to tf.stop_gradient(labels). Please check this transformation.
+
+52:8: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+52:8: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/rainbow_q_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/rainbow_q_head.py'
+--------------------------------------------------------------------------------
+
+40:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+46:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+61:29: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+64:20: INFO: Changing labels arg of tf.nn.softmax_cross_entropy_with_logits to tf.stop_gradient(labels). Please check this transformation.
+
+65:8: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+65:8: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/dueling_q_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/dueling_q_head.py'
+--------------------------------------------------------------------------------
+
+35:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+40:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/heads/ppo_head.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/heads/ppo_head.py'
+--------------------------------------------------------------------------------
+
+49:37: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+50:41: INFO: Renamed 'tf.assign' to 'tf.compat.v1.assign'
+71:44: INFO: Renamed 'tf.distributions.kl_divergence' to 'tf.compat.v1.distributions.kl_divergence'
+80:26: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+85:39: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+103:8: INFO: tf.losses.add_loss requires manual check. tf.losses have been replaced with object oriented versions in TF 2.0 and after. The loss function calls have been converted to compat.v1 for backward compatibility. Please update these calls to the TF 2.0 versions.
+103:8: INFO: Renamed 'tf.losses.add_loss' to 'tf.compat.v1.losses.add_loss'
+107:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+109:31: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+110:30: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+119:35: ERROR: Using member tf.contrib.distributions.Categorical in deprecated module tf.contrib. tf.contrib.distributions.Categorical cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+120:39: ERROR: Using member tf.contrib.distributions.Categorical in deprecated module tf.contrib. tf.contrib.distributions.Categorical cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+126:23: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+128:31: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+129:30: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+139:58: INFO: Renamed 'tf.GraphKeys' to 'tf.compat.v1.GraphKeys'
+146:35: ERROR: Using member tf.contrib.distributions.MultivariateNormalDiag in deprecated module tf.contrib. tf.contrib.distributions.MultivariateNormalDiag cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+147:39: ERROR: Using member tf.contrib.distributions.MultivariateNormalDiag in deprecated module tf.contrib. tf.contrib.distributions.MultivariateNormalDiag cannot be converted automatically. tf.contrib will not be distributed with TensorFlow 2.0, please consider an alternative in non-contrib TensorFlow, a community-maintained repository such as tensorflow/addons, or fork the required code.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/middlewares/middleware.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/middlewares/middleware.py'
+--------------------------------------------------------------------------------
+
+74:13: INFO: Renamed 'tf.variable_scope' to 'tf.compat.v1.variable_scope'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/middlewares/__init__.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/middlewares/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/middlewares/lstm_middleware.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/middlewares/lstm_middleware.py'
+--------------------------------------------------------------------------------
+
+60:20: INFO: Renamed 'tf.nn.rnn_cell.BasicLSTMCell' to 'tf.compat.v1.nn.rnn_cell.BasicLSTMCell'
+64:20: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+65:20: INFO: Renamed 'tf.placeholder' to 'tf.compat.v1.placeholder'
+69:19: INFO: Renamed 'tf.nn.rnn_cell.LSTMStateTuple' to 'tf.compat.v1.nn.rnn_cell.LSTMStateTuple'
+70:35: INFO: Renamed 'tf.nn.dynamic_rnn' to 'tf.compat.v1.nn.dynamic_rnn'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/architectures/tensorflow_components/middlewares/fc_middleware.py'
+ outputting to 'rl_coach/architectures/tensorflow_components/middlewares/fc_middleware.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Doom_Basic_BC.py'
+ outputting to 'rl_coach/presets/Doom_Basic_BC.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_Rainbow.py'
+ outputting to 'rl_coach/presets/CartPole_Rainbow.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/BitFlip_DQN.py'
+ outputting to 'rl_coach/presets/BitFlip_DQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_Dueling_DDQN_with_PER_OpenAI.py'
+ outputting to 'rl_coach/presets/Atari_Dueling_DDQN_with_PER_OpenAI.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_QR_DQN.py'
+ outputting to 'rl_coach/presets/Atari_QR_DQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Mujoco_SAC.py'
+ outputting to 'rl_coach/presets/Mujoco_SAC.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Doom_Basic_DFP.py'
+ outputting to 'rl_coach/presets/Doom_Basic_DFP.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_A3C.py'
+ outputting to 'rl_coach/presets/Atari_A3C.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Mujoco_A3C.py'
+ outputting to 'rl_coach/presets/Mujoco_A3C.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/ExplorationChain_Dueling_DDQN.py'
+ outputting to 'rl_coach/presets/ExplorationChain_Dueling_DDQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_PG.py'
+ outputting to 'rl_coach/presets/CartPole_PG.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Mujoco_DDPG.py'
+ outputting to 'rl_coach/presets/Mujoco_DDPG.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Pendulum_HAC.py'
+ outputting to 'rl_coach/presets/Pendulum_HAC.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_PAL.py'
+ outputting to 'rl_coach/presets/CartPole_PAL.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Doom_Basic_ACER.py'
+ outputting to 'rl_coach/presets/Doom_Basic_ACER.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_NEC.py'
+ outputting to 'rl_coach/presets/Atari_NEC.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/ExplorationChain_Bootstrapped_DQN.py'
+ outputting to 'rl_coach/presets/ExplorationChain_Bootstrapped_DQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/BitFlip_DQN_HER.py'
+ outputting to 'rl_coach/presets/BitFlip_DQN_HER.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Doom_Basic_A3C.py'
+ outputting to 'rl_coach/presets/Doom_Basic_A3C.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Fetch_DDPG_HER_baselines.py'
+ outputting to 'rl_coach/presets/Fetch_DDPG_HER_baselines.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Doom_Health_DFP.py'
+ outputting to 'rl_coach/presets/Doom_Health_DFP.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_DDQN_BatchRL.py'
+ outputting to 'rl_coach/presets/CartPole_DDQN_BatchRL.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_C51.py'
+ outputting to 'rl_coach/presets/Atari_C51.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Doom_Health_Supreme_DFP.py'
+ outputting to 'rl_coach/presets/Doom_Health_Supreme_DFP.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_ACER.py'
+ outputting to 'rl_coach/presets/Atari_ACER.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Starcraft_CollectMinerals_Dueling_DDQN.py'
+ outputting to 'rl_coach/presets/Starcraft_CollectMinerals_Dueling_DDQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_NStepQ.py'
+ outputting to 'rl_coach/presets/Atari_NStepQ.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_ClippedPPO.py'
+ outputting to 'rl_coach/presets/CartPole_ClippedPPO.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Mujoco_A3C_LSTM.py'
+ outputting to 'rl_coach/presets/Mujoco_A3C_LSTM.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CARLA_DDPG.py'
+ outputting to 'rl_coach/presets/CARLA_DDPG.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_DFP.py'
+ outputting to 'rl_coach/presets/CartPole_DFP.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_Bootstrapped_DQN.py'
+ outputting to 'rl_coach/presets/Atari_Bootstrapped_DQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_A3C_LSTM.py'
+ outputting to 'rl_coach/presets/Atari_A3C_LSTM.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_NStepQ.py'
+ outputting to 'rl_coach/presets/CartPole_NStepQ.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/MontezumaRevenge_BC.py'
+ outputting to 'rl_coach/presets/MontezumaRevenge_BC.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Mujoco_TD3.py'
+ outputting to 'rl_coach/presets/Mujoco_TD3.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/__init__.py'
+ outputting to 'rl_coach/presets/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/InvertedPendulum_PG.py'
+ outputting to 'rl_coach/presets/InvertedPendulum_PG.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_Rainbow.py'
+ outputting to 'rl_coach/presets/Atari_Rainbow.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_DDQN_BCQ_BatchRL.py'
+ outputting to 'rl_coach/presets/CartPole_DDQN_BCQ_BatchRL.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Mujoco_PPO.py'
+ outputting to 'rl_coach/presets/Mujoco_PPO.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Doom_Basic_Dueling_DDQN.py'
+ outputting to 'rl_coach/presets/Doom_Basic_Dueling_DDQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_NEC.py'
+ outputting to 'rl_coach/presets/CartPole_NEC.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_DDQN_with_PER.py'
+ outputting to 'rl_coach/presets/Atari_DDQN_with_PER.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_ACER.py'
+ outputting to 'rl_coach/presets/CartPole_ACER.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Doom_Battle_DFP.py'
+ outputting to 'rl_coach/presets/Doom_Battle_DFP.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Doom_Basic_DQN.py'
+ outputting to 'rl_coach/presets/Doom_Basic_DQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CARLA_3_Cameras_DDPG.py'
+ outputting to 'rl_coach/presets/CARLA_3_Cameras_DDPG.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_Dueling_DDQN.py'
+ outputting to 'rl_coach/presets/Atari_Dueling_DDQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_DQN_with_PER.py'
+ outputting to 'rl_coach/presets/Atari_DQN_with_PER.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_A3C.py'
+ outputting to 'rl_coach/presets/CartPole_A3C.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_Dueling_DDQN.py'
+ outputting to 'rl_coach/presets/CartPole_Dueling_DDQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/ControlSuite_DDPG.py'
+ outputting to 'rl_coach/presets/ControlSuite_DDPG.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_DDQN.py'
+ outputting to 'rl_coach/presets/Atari_DDQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_DQN.py'
+ outputting to 'rl_coach/presets/Atari_DQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Doom_Health_MMC.py'
+ outputting to 'rl_coach/presets/Doom_Health_MMC.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Starcraft_CollectMinerals_A3C.py'
+ outputting to 'rl_coach/presets/Starcraft_CollectMinerals_A3C.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CARLA_Dueling_DDQN.py'
+ outputting to 'rl_coach/presets/CARLA_Dueling_DDQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_DQN.py'
+ outputting to 'rl_coach/presets/CartPole_DQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/ExplorationChain_UCB_Q_ensembles.py'
+ outputting to 'rl_coach/presets/ExplorationChain_UCB_Q_ensembles.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CartPole_QR_DQN.py'
+ outputting to 'rl_coach/presets/CartPole_QR_DQN.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Atari_UCB_with_Q_Ensembles.py'
+ outputting to 'rl_coach/presets/Atari_UCB_with_Q_Ensembles.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Mujoco_NAF.py'
+ outputting to 'rl_coach/presets/Mujoco_NAF.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Acrobot_DDQN_BCQ_BatchRL.py'
+ outputting to 'rl_coach/presets/Acrobot_DDQN_BCQ_BatchRL.py'
+--------------------------------------------------------------------------------
+
+37:98: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+37:98: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+80:41: INFO: tf.constant_initializer requires manual check. Initializers no longer have the dtype argument in the constructor or partition_info argument in the __call__ method.
+The calls have been converted to compat.v1 for safety (even though they may already have been correct).
+80:41: INFO: Renamed 'tf.constant_initializer' to 'tf.compat.v1.constant_initializer'
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/Mujoco_ClippedPPO.py'
+ outputting to 'rl_coach/presets/Mujoco_ClippedPPO.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/presets/CARLA_CIL.py'
+ outputting to 'rl_coach/presets/CARLA_CIL.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/graph_managers/batch_rl_graph_manager.py'
+ outputting to 'rl_coach/graph_managers/batch_rl_graph_manager.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/graph_managers/hac_graph_manager.py'
+ outputting to 'rl_coach/graph_managers/hac_graph_manager.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/graph_managers/graph_manager.py'
+ outputting to 'rl_coach/graph_managers/graph_manager.py'
+--------------------------------------------------------------------------------
+
+176:17: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+215:17: INFO: Renamed 'tf.ConfigProto' to 'tf.compat.v1.ConfigProto'
+244:24: INFO: Renamed 'tf.Session' to 'tf.compat.v1.Session'
+281:8: INFO: Renamed 'tf.train.write_graph' to 'tf.io.write_graph'
+281:29: INFO: Renamed 'tf.get_default_graph' to 'tf.compat.v1.get_default_graph'
+626:36: WARNING: *.save requires manual check. (This warning is only applicable if the code saves a tf.Keras model) Keras model.save now saves to the Tensorflow SavedModel format by default, instead of HDF5. To continue saving to HDF5, add the argument save_format='h5' to the save() function.
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/graph_managers/__init__.py'
+ outputting to 'rl_coach/graph_managers/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/graph_managers/basic_rl_graph_manager.py'
+ outputting to 'rl_coach/graph_managers/basic_rl_graph_manager.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/graph_managers/hrl_graph_manager.py'
+ outputting to 'rl_coach/graph_managers/hrl_graph_manager.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/control_suite_environment.py'
+ outputting to 'rl_coach/environments/control_suite_environment.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/__init__.py'
+ outputting to 'rl_coach/environments/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/doom_environment.py'
+ outputting to 'rl_coach/environments/doom_environment.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/carla_environment.py'
+ outputting to 'rl_coach/environments/carla_environment.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/gym_environment.py'
+ outputting to 'rl_coach/environments/gym_environment.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/environment.py'
+ outputting to 'rl_coach/environments/environment.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/starcraft2_environment.py'
+ outputting to 'rl_coach/environments/starcraft2_environment.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/environment_interface.py'
+ outputting to 'rl_coach/environments/environment_interface.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/mujoco/pendulum_with_goals.py'
+ outputting to 'rl_coach/environments/mujoco/pendulum_with_goals.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/mujoco/__init__.py'
+ outputting to 'rl_coach/environments/mujoco/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/mujoco/common/__init__.py'
+ outputting to 'rl_coach/environments/mujoco/common/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/toy_problems/bit_flip.py'
+ outputting to 'rl_coach/environments/toy_problems/bit_flip.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/toy_problems/exploration_chain.py'
+ outputting to 'rl_coach/environments/toy_problems/exploration_chain.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/environments/toy_problems/__init__.py'
+ outputting to 'rl_coach/environments/toy_problems/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/off_policy_evaluators/ope_manager.py'
+ outputting to 'rl_coach/off_policy_evaluators/ope_manager.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/off_policy_evaluators/__init__.py'
+ outputting to 'rl_coach/off_policy_evaluators/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/off_policy_evaluators/rl/weighted_importance_sampling.py'
+ outputting to 'rl_coach/off_policy_evaluators/rl/weighted_importance_sampling.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/off_policy_evaluators/rl/__init__.py'
+ outputting to 'rl_coach/off_policy_evaluators/rl/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/off_policy_evaluators/rl/sequential_doubly_robust.py'
+ outputting to 'rl_coach/off_policy_evaluators/rl/sequential_doubly_robust.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/off_policy_evaluators/bandits/doubly_robust.py'
+ outputting to 'rl_coach/off_policy_evaluators/bandits/doubly_robust.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+Processing file 'rl_coach/off_policy_evaluators/bandits/__init__.py'
+ outputting to 'rl_coach/off_policy_evaluators/bandits/__init__.py'
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+
