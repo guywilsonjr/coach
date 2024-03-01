@@ -116,8 +116,8 @@ class PPOHead(Head):
         self.policy_mean = tf.maximum(tf.nn.softmax(policy_values, name="policy"), ZERO_OFFSET)
 
         # define the distributions for the policy and the old policy
-        self.policy_distribution = tfp.distributions.Categorical(probs=self.policy_mean)
-        self.old_policy_distribution = tfp.distributions.Categorical(probs=self.old_policy_mean)
+        self.policy_distribution = tf.compat.v1.distributions.Categorical(probs=self.policy_mean)
+        self.old_policy_distribution = tf.compat.v1.distributions.Categorical(probs=self.old_policy_mean)
 
         self.output = self.policy_mean
 
