@@ -20,7 +20,7 @@ from typing import Dict, List, Union
 
 import numpy as np
 import tensorflow as tf
-
+tf.compat.v1.disable_v2_behavior()
 from rl_coach.architectures.embedder_parameters import InputEmbedderParameters
 from rl_coach.architectures.head_parameters import HeadParameters
 from rl_coach.architectures.middleware_parameters import MiddlewareParameters

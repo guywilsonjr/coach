@@ -16,7 +16,7 @@
 
 import numpy as np
 import tensorflow as tf
-
+import tensorflow_probability as tfp
 from rl_coach.architectures.tensorflow_components.layers import Dense
 from rl_coach.architectures.tensorflow_components.heads.head import Head, normalized_columns_initializer
 from rl_coach.base_parameters import AgentParameters, DistributedTaskParameters
@@ -44,7 +44,7 @@ class PPOHead(Head):
         self.use_kl_regularization = agent_parameters.algorithm.use_kl_regularization
         if self.use_kl_regularization:
             # kl coefficient and its corresponding assignment operation and placeholder
-            self.kl_coefficient = tf.Variable(agent_parameters.algorithm.initial_kl_coefficient,
+            self.kl_coefficient = tf.compat.v1.Variable(agent_parameters.algorithm.initial_kl_coefficient,
                                               trainable=False, name='kl_coefficient')
             self.kl_coefficient_ph = tf.compat.v1.placeholder('float', name='kl_coefficient_ph')
             self.assign_kl_coefficient = tf.compat.v1.assign(self.kl_coefficient, self.kl_coefficient_ph)
@@ -116,8 +116,8 @@ class PPOHead(Head):
         self.policy_mean = tf.maximum(tf.nn.softmax(policy_values, name="policy"), ZERO_OFFSET)
 
         # define the distributions for the policy and the old policy
-        self.policy_distribution = tf.contrib.distributions.Categorical(probs=self.policy_mean)
-        self.old_policy_distribution = tf.contrib.distributions.Categorical(probs=self.old_policy_mean)
+        self.policy_distribution = tfp.Categorical(probs=self.policy_mean)
+        self.old_policy_distribution = tfp.Categorical(probs=self.old_policy_mean)
 
         self.output = self.policy_mean
 
