@@ -237,7 +237,7 @@ class GeneralTensorFlowNetwork(TensorFlowArchitecture):
             raise ValueError("Exactly one middleware type should be defined")
 
         # ops for defining the training / testing phase
-        self.is_training = tf.Variable(False, trainable=False, collections=[tf.compat.v1.GraphKeys.LOCAL_VARIABLES])
+        self.is_training = tf.compat.v1.Variable(False, trainable=False, collections=[tf.compat.v1.GraphKeys.LOCAL_VARIABLES])
         self.is_training_placeholder = tf.compat.v1.placeholder("bool")
         self.assign_is_training = tf.compat.v1.assign(self.is_training, self.is_training_placeholder)
 
@@ -396,9 +396,6 @@ class GeneralTensorFlowNetwork(TensorFlowArchitecture):
                 self.optimizer = tf.compat.v1.train.RMSPropOptimizer(self.current_learning_rate,
                                                            decay=self.network_parameters.rms_prop_optimizer_decay,
                                                            epsilon=self.network_parameters.optimizer_epsilon)
-            elif self.network_parameters.optimizer_type == 'LBFGS':
-                self.optimizer = tf.contrib.opt.ScipyOptimizerInterface(self.total_loss, method='L-BFGS-B',
-                                                                        options={'maxiter': 25})
             else:
                 raise Exception("{} is not a valid optimizer type".format(self.network_parameters.optimizer_type))
 

@@ -116,7 +116,7 @@ class InputEmbedder(object):
                              is_training=self.is_training)
             ))
 
-        self.output = tf.contrib.layers.flatten(self.layers[-1])
+        self.output = tf.compat.v1.layers.flatten(self.layers[-1])
 
     @property
     def input_size(self) -> List[int]:

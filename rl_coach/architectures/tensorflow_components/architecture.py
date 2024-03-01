@@ -129,7 +129,7 @@ class TensorFlowArchitecture(Architecture):
 
             if self.ap.visualization.tensorboard:
                 current_scope_summaries = tf.compat.v1.get_collection(tf.compat.v1.GraphKeys.SUMMARIES,
-                                                            scope=tf.contrib.framework.get_name_scope())
+                                                            scope=tf.get_current_name_scope())
                 self.merged = tf.compat.v1.summary.merge(current_scope_summaries)
 
             # initialize or restore model

@@ -118,7 +118,7 @@ class GlobalVariableSaver(Saver):
         # We don't use saver.restore() because checkpoint is loaded to online
         # network, but if the checkpoint is from the global network, a namespace
         # mismatch exists and variable name must be modified before loading.
-        reader = tf.contrib.framework.load_checkpoint(restore_path)
+        reader = tf.train.load_checkpoint(restore_path)
         for var_name, _ in reader.get_variable_to_shape_map().items():
             yield var_name, reader.get_tensor(var_name)
 
