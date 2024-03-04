@@ -46,8 +46,9 @@ class Architecture(object):
         """
         self.spaces = spaces
         self.name = name
-        self.network_wrapper_name = self.name.split('/')[0]  # e.g. 'main/online' --> 'main'
-        self.full_name = "{}/{}".format(agent_parameters.full_name_id, name)
+        self.network_wrapper_name = self.name.split('/')[1]  # e.g. 'main/online' --> 'main'
+        self.full_name = "{}/{}".format(agent_parameters.full_name_id, '/'.join(name.split('/')[1:]))
+        # self.full_name = "{}/{}".format(agent_parameters.full_name_id, name)
         self.network_parameters = agent_parameters.network_wrappers[self.network_wrapper_name]
         self.batch_size = self.network_parameters.batch_size
         self.learning_rate = self.network_parameters.learning_rate

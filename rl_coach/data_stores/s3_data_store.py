@@ -17,7 +17,7 @@
 
 from rl_coach.data_stores.data_store import DataStore, DataStoreParameters
 from minio import Minio
-from minio.error import ResponseError
+from minio.error import InvalidResponseError
 from configparser import ConfigParser, Error
 from rl_coach.checkpoint import CheckpointStateFile
 from rl_coach.data_stores.data_store import SyncFiles
@@ -133,7 +133,7 @@ class S3DataStore(DataStore):
                 for filename in os.listdir(os.path.join(self.params.expt_dir, 'gifs')):
                         self.mc.fput_object(self.params.bucket_name, filename, os.path.join(self.params.expt_dir, 'gifs', filename))
 
-        except ResponseError as e:
+        except InvalidResponseError as e:
             print("Got exception: %s\n while saving to S3", e)
 
     def load_from_store(self):
@@ -189,7 +189,7 @@ class S3DataStore(DataStore):
                     if not os.path.exists(filename):
                         self.mc.fget_object(obj.bucket_name, obj.object_name, filename)
 
-        except ResponseError as e:
+        except InvalidResponseError as e:
             print("Got exception: %s\n while loading from S3", e)
 
     def setup_checkpoint_dir(self, crd=None):
