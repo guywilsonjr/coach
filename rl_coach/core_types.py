@@ -182,6 +182,7 @@ class RunPhase(Enum):
     TRAIN = "Training"
     TEST = "Testing"
     UNDEFINED = "Undefined"
+    WAITING = "Waiting"
 
 
 # transitions

@@ -173,7 +173,7 @@ class GraphManager(object):
     @staticmethod
     def _create_worker_or_parameters_server_tf(task_parameters: DistributedTaskParameters):
         import tensorflow as tf
-        config = tf.ConfigProto()
+        config = tf.compat.v1.ConfigProto()
         config.allow_soft_placement = True  # allow placing ops on cpu if they are not fit for gpu
         config.gpu_options.allow_growth = True  # allow the gpu memory allocated for the worker to grow if needed
         config.gpu_options.per_process_gpu_memory_fraction = 0.2
@@ -212,7 +212,7 @@ class GraphManager(object):
 
     def _create_session_tf(self, task_parameters: TaskParameters):
         import tensorflow as tf
-        config = tf.ConfigProto()
+        config = tf.compat.v1.ConfigProto()
         config.allow_soft_placement = True  # allow placing ops on cpu if they are not fit for gpu
         config.gpu_options.allow_growth = True  # allow the gpu memory allocated for the worker to grow if needed
         # config.gpu_options.per_process_gpu_memory_fraction = 0.2
@@ -241,7 +241,7 @@ class GraphManager(object):
             self.set_session(self.sess)
         else:
             # regular session
-            self.sess = tf.Session(config=config)
+            self.sess = tf.compat.v1.Session(config=config)
             # set the session for all the modules
             self.set_session(self.sess)
 
@@ -278,7 +278,7 @@ class GraphManager(object):
         import tensorflow as tf
 
         # write graph
-        tf.train.write_graph(tf.get_default_graph(),
+        tf.io.write_graph(tf.compat.v1.get_default_graph(),
                              logdir=self.task_parameters.checkpoint_save_dir,
                              name='graphdef.pb',
                              as_text=False)

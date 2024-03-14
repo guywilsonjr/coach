@@ -14,7 +14,7 @@ logging.set_verbosity(logging.INFO)
 
 @pytest.mark.unit_test
 def test_basic_rl_graph_manager_with_pong_a3c():
-    tf.reset_default_graph()
+    tf.compat.v1.reset_default_graph()
     from rl_coach.presets.Atari_A3C import graph_manager
     assert graph_manager
     graph_manager.env_params.level = "PongDeterministic-v4"
@@ -25,7 +25,7 @@ def test_basic_rl_graph_manager_with_pong_a3c():
 
 @pytest.mark.unit_test
 def test_basic_rl_graph_manager_with_pong_nec():
-    tf.reset_default_graph()
+    tf.compat.v1.reset_default_graph()
     from rl_coach.presets.Atari_NEC import graph_manager
     assert graph_manager
     graph_manager.env_params.level = "PongDeterministic-v4"
@@ -36,7 +36,7 @@ def test_basic_rl_graph_manager_with_pong_nec():
 
 @pytest.mark.unit_test
 def test_basic_rl_graph_manager_with_cartpole_dqn():
-    tf.reset_default_graph()
+    tf.compat.v1.reset_default_graph()
     from rl_coach.presets.CartPole_DQN import graph_manager
     assert graph_manager
     graph_manager.create_graph(task_parameters=TaskParameters(framework_type=Frameworks.tensorflow,
@@ -46,7 +46,7 @@ def test_basic_rl_graph_manager_with_cartpole_dqn():
 # Test for identifying memory leak in restore_checkpoint
 @pytest.mark.unit_test
 def test_basic_rl_graph_manager_with_cartpole_dqn_and_repeated_checkpoint_restore():
-    tf.reset_default_graph()
+    tf.compat.v1.reset_default_graph()
     from rl_coach.presets.CartPole_DQN import graph_manager
     assert graph_manager
     graph_manager.create_graph(task_parameters=TaskParameters(framework_type=Frameworks.tensorflow,
